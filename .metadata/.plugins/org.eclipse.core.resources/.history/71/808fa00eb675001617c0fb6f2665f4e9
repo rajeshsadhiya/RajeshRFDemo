@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RodenFieldSuiteName" thread-count="2" parallel="classes" >
+<tests>
+<test name="RodenFieldTestName">
+<classes>
+<!-- <class name="com.selenium.project.seleniumDemo.RodenFieldTest1"/> -->
+<class name="com.selenium.project.seleniumDemo.RodenFieldTest2"/>
+</classes>
+</test>
+</tests>
+</suite>

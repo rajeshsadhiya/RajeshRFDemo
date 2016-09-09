@@ -1,0 +1,94 @@
+package com.selenium.project.seleniumDemo;
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+
+public class RodenFieldPages {
+
+
+	WebDriver driver;
+
+	By shopSkinCare=By.xpath("//*[contains(text(),'SHOP SKINCARE')]");
+	By allProducts=By.xpath("//*[contains(text(),'All Products')]");
+	By refineByProducts=By.className("refine-products-button");
+	By refineByRedefine=By.xpath("//div[contains(text(),'REDEFINE')]/following-sibling::div/div");
+	By refineByReverse=By.xpath("//div[contains(text(),'REVERSE')]/following-sibling::div/div");
+	By refineByPrice=By.xpath("//input[@class='refine-products-button' and @value='- Price -']");
+	By refineByPriceCad=By.xpath("//div[contains(text(),'CAD$50 TO CAD$199.99')]/following-sibling::div/div");
+	By becomeConsultant=By.xpath("//*[contains(text(),'BECOME A CONSULTANT')]");
+	By enrollNow=By.xpath("//*[contains(text(),'Enroll Now')]");
+	
+	
+	
+	//BECOME A CONSULTANT
+	
+	public RodenFieldPages(WebDriver driver){
+		this.driver=driver;
+	}
+
+	public void clickShopSkinCare(){
+		driver.findElement(shopSkinCare).click();
+	}
+
+	public void clickAllProducts(){
+		driver.findElement(allProducts).click();
+
+	}
+	
+	public void clickRefineByProducts(){
+		driver.findElement(refineByProducts).click();
+		
+		
+	}
+	
+	public void selectRefineByRedefineFromDropDown(){
+		driver.findElement(refineByRedefine).click();
+		
+		
+	}
+	
+	public void selectRedefineByReverseFromDropDown(){
+		driver.findElement(refineByReverse).click();
+		
+		
+	}
+	
+	public void clickRefineByPrice(){
+		driver.findElement(refineByPrice).click();
+		
+		
+	}
+	
+	public void selectRedefineByPriceCadFromDropDown(){
+		driver.findElement(refineByPriceCad).click();
+		
+		
+	}
+	
+	
+	public void clickBecomeConsultant(){
+		driver.findElement(becomeConsultant).click();
+	}
+	
+
+	public void clickEnrollNow(){
+		driver.findElement(enrollNow).click();
+	}
+
+
+	public void firefoxWindow(){
+		// maximize the browser
+		driver.manage().window().maximize();
+
+		// setting timeout for implicit wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		//call URL in get method
+		driver.get("https://www.rodanandfields.com/ca/");	
+	}
+
+
+
+}

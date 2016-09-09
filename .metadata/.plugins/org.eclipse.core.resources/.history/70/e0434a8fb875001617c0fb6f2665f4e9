@@ -1,0 +1,49 @@
+package com.selenium.project.seleniumDemo;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class RodenField1Test {
+
+	//launch the firefox driver
+	WebDriver driver=new FirefoxDriver();
+
+	//creating the object RodenFieldPages
+	RodenFieldPages1 pages=new RodenFieldPages1(driver);
+
+	@Test
+	public void t1() throws Exception{
+
+		pages.firefoxWindow();
+		pages.clickShopSkinCare();
+		pages.clickAllProducts();
+
+
+		//Verify the user is on quickshop page
+		Assert.assertTrue(driver.getCurrentUrl().contains("quickShop"), "not Verify the user is on quickshop page");
+
+		pages.clickRefineByProducts();
+		Thread.sleep(2000);
+		pages.selectRefineByRedefineFromDropDown();
+		pages.clickRefineByProducts();
+		Thread.sleep(2000);
+		pages.selectRedefineByReverseFromDropDown();
+		Thread.sleep(2000);
+		pages.clickRefineByPrice();
+		Thread.sleep(2000);
+		pages.selectRedefineByPriceCadFromDropDown();
+		
+		//Verify the Reverse and Redefine filter labels along with checkboxes on the page
+		System.out.println("AAAAAAAAAAAA: "+driver.findElement(By.xpath("//div[@id='quick-filtered']/ul[2]/li[1]/form/label")).getText());
+		System.out.println("BBBBBBBBBBB: "+driver.findElement(By.xpath("//div[@id='quick-filtered']/ul[2]/li[1]/form/label")).getText().contains("REDEFINE"));
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='quick-filtered']/ul[2]/li[1]/form/label")).getText().contains("REDEFINE"),"not Verify the Reverse");
+		
+		
+ 
+	}
+
+}

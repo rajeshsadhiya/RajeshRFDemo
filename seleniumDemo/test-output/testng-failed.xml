@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [RodenFieldSuiteName]" parallel="classes">
+  <test name="RodenFieldTestName">
+    <classes>
+      <class name="com.selenium.project.seleniumDemo.RodenField1Test"/>
+      <class name="com.selenium.project.seleniumDemo.RodenField2Test"/>
+    </classes>
+  </test> <!-- RodenFieldTestName -->
+</suite> <!-- Failed suite [RodenFieldSuiteName] -->

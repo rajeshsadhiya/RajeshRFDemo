@@ -1,0 +1,48 @@
+package com.selenium.project.seleniumDemo;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class RodenFieldPages2 {
+
+	WebDriver driver;
+	
+	By becomeConsultant=By.xpath("//*[contains(text(),'BECOME A CONSULTANT')]");
+	By enrollNow=By.xpath("//*[contains(text(),'Enroll Now')]");
+	By policyProcedures=By.xpath("//*[contains(text(),'Rodan + Fields Policies and Procedures')]");
+	
+	
+	public RodenFieldPages2(WebDriver driver){
+		this.driver=driver;
+	}
+	
+	public void clickBecomeConsultant(){
+		driver.findElement(becomeConsultant).click();
+	}
+	
+
+	public void clickEnrollNow(){
+		driver.findElement(enrollNow).click();
+	}
+	
+
+	public void clickPolicyProcedureLink(){
+		driver.findElement(enrollNow).click();
+	}
+	
+	
+
+	public void firefoxWindow(){
+		// maximize the browser
+		driver.manage().window().maximize();
+
+		// setting timeout for implicit wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		//call URL in get method
+		driver.get("https://www.rodanandfields.com/ca/");	
+	}
+
+}

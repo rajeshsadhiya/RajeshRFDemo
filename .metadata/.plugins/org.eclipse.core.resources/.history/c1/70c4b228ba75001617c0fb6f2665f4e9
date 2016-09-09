@@ -1,0 +1,25 @@
+package com.selenium.project.seleniumDemo;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class BaseClass {
+
+	public void firefoxWindow(){
+		
+		//launch the firefox driver
+		WebDriver driver=new FirefoxDriver();
+		
+		// maximize the browser
+		driver.manage().window().maximize();
+
+		// setting timeout for implicit wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		//call URL in get method
+		driver.get("https://www.rodanandfields.com/ca/");	
+	}
+	
+}

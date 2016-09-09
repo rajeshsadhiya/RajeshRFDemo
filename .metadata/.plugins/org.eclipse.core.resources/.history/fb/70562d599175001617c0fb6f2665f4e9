@@ -1,0 +1,32 @@
+package com.selenium.project.seleniumDemo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class RodenFieldTest2 {
+
+	
+	    //launch the firefox driver
+		WebDriver driver=new FirefoxDriver();
+
+		//creating the object RodenFieldPages
+		RodenFieldPages2 pages=new RodenFieldPages2(driver);
+	
+	@Test
+	public void t2() throws Exception{
+
+		pages.firefoxWindow();
+		pages.clickBecomeConsultant();
+		Thread.sleep(2000);
+		pages.clickEnrollNow();
+		Thread.sleep(2000);
+        pages.clickPolicyProcedureLink();
+        
+        //verify the opened link is of Policies_Procedures
+        Assert.assertTrue(driver.getCurrentUrl().contains("Policies_Procedures_CANADA.pdf"), "not verify the opened link is of Policies_Procedures");
+		
+
+	}
+}

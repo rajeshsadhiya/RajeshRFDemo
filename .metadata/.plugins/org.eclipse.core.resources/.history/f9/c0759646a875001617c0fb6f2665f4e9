@@ -1,0 +1,49 @@
+package com.selenium.project.seleniumDemo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class RodenFieldTest2 {
+
+	
+	    //launch the firefox driver
+		WebDriver driver=new FirefoxDriver();
+
+		//creating the object RodenFieldPages
+		RodenFieldPages2 pages=new RodenFieldPages2(driver);
+	
+	@Test
+	public void t2() throws Exception{
+
+		pages.firefoxWindow();
+		pages.clickBecomeConsultant();
+		Thread.sleep(2000);
+		pages.clickEnrollNow();
+		Thread.sleep(5000);
+        pages.clickPolicyProcedureLink();
+        pages.forFocusWindow();
+        
+        //verify the opened link is of Policies_Procedures
+        Assert.assertTrue(driver.getCurrentUrl().contains("Policies_Procedures_CANADA.pdf"), "not verify the opened link is of Policies_Procedures");
+    	
+        pages.forFocusBackWindow();       
+        pages.enterSearchFieldName();
+        pages.clickSearchButton();
+        Thread.sleep(2000);
+        pages.clickFirstResultFromList();
+    	pages.selectFirstResult();
+    	
+    	//verify the selected consultant's name appear on top left corner
+    	
+    	System.out.println("111111111111:"+driver.findElement(By.className("text-capitalize")).getText());
+    	System.out.println("222222222222:"+driver.findElement(By.className("text-capitalize")).getText().contains("michael brand"));
+    	
+    	Assert.assertTrue(driver.findElement(By.className("text-capitalize")).getText().contains("michael brand"), "not verify the selected consultant's name appear on top left corner");
+    	
+    	
+
+	}
+}

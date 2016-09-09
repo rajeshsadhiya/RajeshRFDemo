@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="RodenFieldSuiteName" duration-ms="54503" started-at="2016-09-09T05:45:16Z" finished-at="2016-09-09T05:46:10Z">
+    <groups>
+    </groups>
+    <test name="RodenFieldTestName" duration-ms="54503" started-at="2016-09-09T05:45:16Z" finished-at="2016-09-09T05:46:10Z">
+      <class name="com.selenium.project.seleniumDemo.RodenField1Test">
+        <test-method status="PASS" signature="t1()[pri:0, instance:com.selenium.project.seleniumDemo.RodenField1Test@15a1faec]" name="t1" duration-ms="38166" started-at="2016-09-09T11:15:16Z" finished-at="2016-09-09T11:15:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- t1 -->
+      </class> <!-- com.selenium.project.seleniumDemo.RodenField1Test -->
+      <class name="com.selenium.project.seleniumDemo.RodenField2Test">
+        <test-method status="PASS" signature="t2()[pri:0, instance:com.selenium.project.seleniumDemo.RodenField2Test@4da2a316]" name="t2" duration-ms="54151" started-at="2016-09-09T11:15:16Z" finished-at="2016-09-09T11:16:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- t2 -->
+      </class> <!-- com.selenium.project.seleniumDemo.RodenField2Test -->
+    </test> <!-- RodenFieldTestName -->
+  </suite> <!-- RodenFieldSuiteName -->
+</testng-results>

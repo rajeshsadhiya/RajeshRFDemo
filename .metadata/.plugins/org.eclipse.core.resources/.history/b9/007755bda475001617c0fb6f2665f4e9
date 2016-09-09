@@ -1,0 +1,88 @@
+package com.selenium.project.seleniumDemo;
+
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class RodenFieldPages2 {
+
+	WebDriver driver;
+	String parentwin;
+	
+
+	By becomeConsultant=By.xpath("//*[contains(text(),'BECOME A CONSULTANT')]");
+	By enrollNow=By.xpath("//*[contains(text(),'Enroll Now')]");
+	By policyProcedures=By.xpath("//div[@class='content']/p/a[1]");
+	By enterSearchField=By.xpath("//input[@id='sponserparam']");
+	By searchButton=By.xpath("//*[contains(text(),'SEARCH')]");
+	By clickFirstResult=By.xpath("//div[@id='search-results']/div/div[1]/form/div");
+	By firstResult=By.xpath("//div[@id='search-results']/div/div[1]/form/div/div/input");
+
+	public RodenFieldPages2(WebDriver driver){
+		this.driver=driver;
+	}
+
+	public void clickBecomeConsultant(){
+		driver.findElement(becomeConsultant).click();
+	}
+
+
+	public void clickEnrollNow(){
+		driver.findElement(enrollNow).click();
+	}
+
+
+	public void clickPolicyProcedureLink(){
+		driver.findElement(policyProcedures).click();
+	}
+	
+	public void enterSearchFieldName(){
+		driver.findElement(enterSearchField).sendKeys("test");
+	}
+
+	public void clickSearchButton(){
+		driver.findElement(searchButton).click();
+	}
+   
+	public void clickFirstResultFromList(){
+		driver.findElement(clickFirstResult).click();
+	}
+	
+	public void selectFirstResult(){
+		driver.findElement(firstResult).click();
+	}
+	
+	
+	public void forFocusWindow(){
+
+		//focus another window
+		parentwin = driver.getWindowHandle();
+		Set<String> allwin = driver.getWindowHandles();
+		for (String s : allwin) {
+			if (s.equals(parentwin) == false) {
+				driver.switchTo().window(s);
+			
+			}
+		}
+
+	}
+	
+	public void forFocusBackWindow(){	
+		driver.close();
+        driver.switchTo().window(parentwin);
+	}
+	
+	public void firefoxWindow(){
+		// maximize the browser
+		driver.manage().window().maximize();
+
+		// setting timeout for implicit wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		//call URL in get method
+		driver.get("https://www.rodanandfields.com/ca/");	
+	}
+
+}
